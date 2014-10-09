@@ -22,15 +22,18 @@ import net.miginfocom.swing.MigLayout;
 import Actions.ActionExit;
 import Actions.ActionReset;
 import Actions.ActionStart;
+import Actions.ActionStartTimer;
 
 @SuppressWarnings("serial")
 public class MainFrame extends JFrame{
 
-	JLabel lNaziv = new JLabel("Unesite delay za shootdown");
+	JLabel lNaziv = new JLabel("Unesite delay za shutdown");
 	JButton btnStart = new JButton("Start");
 	//btnStart.setSize(50, 50);
 	JButton btnReset = new JButton("Reset");
 	JButton btnExit = new JButton("Exit");
+	JButton btnTimer = new JButton("Timer");
+	
 	JLabel lVreme = new JLabel("0");
 	JLabel lTekst = new JLabel("Preostalo vreme:");
 	JTextField jBrojac = new JTextField("",15);
@@ -82,15 +85,21 @@ public class MainFrame extends JFrame{
 		myPanel.add(btnExit,"wrap");
 		myPanel.add(lTekst);
 		myPanel.add(lVreme,"span 4");
+		myPanel.add(btnTimer);
 		
 		ActionStart actStart = new ActionStart(this);
 		ActionExit actExit = new ActionExit(this);
 		ActionReset actReset = new ActionReset(this);
 		
+		ActionStartTimer actStartTimer = new ActionStartTimer(this);
+		//ActionTimer actTimer = new ActionTimer(this);
+		
 		btnStart.addActionListener(actStart);
 		btnExit.addActionListener(actExit);
 		btnReset.addActionListener(actReset);
+		btnTimer.addActionListener(actStartTimer);
 		
+	//	btnTimer.addActionListener(ActionTimer);
 		
 		
 		
@@ -104,7 +113,7 @@ public class MainFrame extends JFrame{
 	public void setJtft(String s){
 		jftf.setText(s);
 	}
-	
+	/*
 	public static void main(String[] args){
 		
 		try {
@@ -115,6 +124,6 @@ public class MainFrame extends JFrame{
 		}
 		
 //		mf.setVisible(true);
-	}
+	}*/
 	
 }

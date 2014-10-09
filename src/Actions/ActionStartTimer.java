@@ -5,11 +5,10 @@ import java.awt.event.ActionListener;
 
 import javax.swing.Timer;
 
-
-import Util.Parse;
 import GUI.MainFrame;
+import Util.Parse;
 
-public class ActionStart implements ActionListener {
+public class ActionStartTimer implements ActionListener {
 	private String s;
 	private String sv;
 
@@ -19,7 +18,7 @@ public class ActionStart implements ActionListener {
 	 */
 	private Integer vremeUSec=0;
 	MainFrame mfLocal ;
-	public ActionStart(MainFrame mf){
+	public ActionStartTimer(MainFrame mf){
 		//s = mf.getJBrojac();
 		mfLocal = mf;
 	}
@@ -30,7 +29,7 @@ public class ActionStart implements ActionListener {
 		s = mfLocal.getJBrojac();
 		sv = mfLocal.getJtft();
 		System.out.println(s);
-		ActionTimer actTimer;
+		ActionBrojac actTimer;
 		//JOptionPane.showMessageDialog(null,"Tekst koji je unet u polje je: "+s+"\n masked texkt"+sv);
 
 
@@ -39,7 +38,7 @@ public class ActionStart implements ActionListener {
 		Counter.brojac(vremeUSec);
 		 */
 
-		actTimer = new ActionTimer(vremeUSec,mfLocal);/*{
+		actTimer = new ActionBrojac(vremeUSec,mfLocal);/*{
 			@Override
 			public void actionPerformed(ActionEvent event){
 
@@ -62,8 +61,7 @@ public class ActionStart implements ActionListener {
 	}
 
 	public static void stopT(){
-		if(timer != null)
-			timer.stop();
+		timer.stop();
 	}
 
 

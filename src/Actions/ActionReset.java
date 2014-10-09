@@ -17,5 +17,6 @@ public class ActionReset implements ActionListener {
 		mfLocal.setJtft("000000");
 		mfLocal.setLVreme("00:00:00");
 		ActionStart.stopT();
+		ActionBrojac.clip.stop();
 	}
 }
