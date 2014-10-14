@@ -8,19 +8,13 @@ import javax.swing.Timer;
 import GUI.MainFrame;
 import Util.Parse;
 
-public class ActionStartTimer implements ActionListener {
-	private String s;
-	private String sv;
+public class ActionStartTimer extends ActionStart {
 
-	static Timer timer;
-	/**
-	 * Proma ukupno vreme iscitano iz polja za unos u sekundama.
-	 */
-	private Integer vremeUSec=0;
-	MainFrame mfLocal ;
-	public ActionStartTimer(MainFrame mf){
-		//s = mf.getJBrojac();
-		mfLocal = mf;
+	
+	
+	public ActionStartTimer(MainFrame mf) {
+		super(mf);
+		// TODO Auto-generated constructor stub
 	}
 
 	@Override 
@@ -34,23 +28,9 @@ public class ActionStartTimer implements ActionListener {
 
 
 		vremeUSec = Parse.parsiraj(sv);
-		/*
-		Counter.brojac(vremeUSec);
-		 */
+		
 
-		actTimer = new ActionBrojac(vremeUSec,mfLocal);/*{
-			@Override
-			public void actionPerformed(ActionEvent event){
-
-				System.out.println("Vreme je: "+ vremeUSec);
-				mfLocal.setLVreme(vremeUSec);
-				vremeUSec--;
-				if(vremeUSec<2){
-					Toolkit.getDefaultToolkit().beep();
-					stopT();
-				}
-			}
-		};*/
+		actTimer = new ActionBrojac(vremeUSec,mfLocal);
 
 		timer = new Timer(1000, actTimer);
 		timer.start();
@@ -60,18 +40,4 @@ public class ActionStartTimer implements ActionListener {
 		    	timer.stop();}*/
 	}
 
-	public static void stopT(){
-		timer.stop();
-	}
-
-
-
-
-	public String getS() {
-		return s;
-	}
-
-	public void setS(String s) {
-		this.s = s;
-	}
 }

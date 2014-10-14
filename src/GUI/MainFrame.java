@@ -53,6 +53,7 @@ public class MainFrame extends JFrame{
 		
 		GridLayout glo = new GridLayout(0,2);
 		
+		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		this.setTitle("Naslov testa");
 		this.setSize(500, 300);
 		

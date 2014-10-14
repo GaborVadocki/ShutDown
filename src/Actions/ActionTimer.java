@@ -9,15 +9,15 @@ import GUI.MainFrame;
 
 public class ActionTimer implements ActionListener{
 	
-	MainFrame mfLocal;
-	Integer vremeUSec;
+	protected MainFrame mfLocal;
+	protected Integer vremeUSec;
 	public ActionTimer(){}
 	
-	String izlazZaLabel;
-	Integer sa; // sati za ispis
-	Integer mOSTATAK; // ostatak broja sekundi nakon sto smo aduzeli sate
-	Integer m; // minuti za ispis
-	Integer se; // sekunde za ispis
+	protected String izlazZaLabel;
+	protected Integer sa; // sati za ispis
+	protected Integer mOSTATAK; // ostatak broja sekundi nakon sto smo aduzeli sate
+	protected Integer m; // minuti za ispis
+	protected Integer se; // sekunde za ispis
 	public ActionTimer(Integer vremeUSec,MainFrame mf){
 		this.vremeUSec = vremeUSec;
 		mfLocal = mf;

@@ -3,9 +3,8 @@ package Actions;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.URL;
+
+
 
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
@@ -13,24 +12,16 @@ import javax.sound.sampled.Clip;
 import javax.swing.JOptionPane;
 
 import GUI.MainFrame;
-import Main.Main;
 
-public class ActionBrojac implements ActionListener{
+public class ActionBrojac extends ActionTimer{
 	
-	MainFrame mfLocal;
-	Integer vremeUSec;
-	public ActionBrojac(){}
 	
-	String izlazZaLabel;
-	Integer sa; // sati za ispis
-	Integer mOSTATAK; // ostatak broja sekundi nakon sto smo aduzeli sate
-	Integer m; // minuti za ispis
-	Integer se; // sekunde za ispis
-	public ActionBrojac(Integer vremeUSec,MainFrame mf){
-		this.vremeUSec = vremeUSec;
-		mfLocal = mf;
+	
+	public ActionBrojac(Integer vremeUSec, MainFrame mf) {
+		super(vremeUSec, mf);
+		// TODO Auto-generated constructor stub
 	}
-	
+
 	@Override
 	public void actionPerformed(ActionEvent event){
 
@@ -54,13 +45,6 @@ public class ActionBrojac implements ActionListener{
 			Toolkit.getDefaultToolkit().beep();
 			playSound("x");
 			ActionStartTimer.stopT();
-			//String shutdownCmd = "shutdown -s";
-				/*	try {
-						 Runtime.getRuntime().exec(shutdownCmd);
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}*/
 		}
 	}
 	
@@ -72,24 +56,15 @@ public class ActionBrojac implements ActionListener{
 		  // Clip finishing; see comments.
 		    public void run() {
 		      try {
-		    	 String url1 = "resources/AlarmClock.wav";
-		    	// URL url = new URL("..\\resources\\AlarmClock.wav");
+		       String url1 = "resources/AlarmClock.wav";
+		    	
 		       clip = AudioSystem.getClip();
-		       // ClassLoader cl = new ClassLoader();
-		      
-		    /*   AudioInputStream inputStream = AudioSystem.getAudioInputStream(
-		        		//ActionBrojac.class.getResourceAsStream(url1)
-		        		this.getClass().getClassLoader().getResourceAsStream(url1)
-		        		//url
-		        		);*/
-		     
+		 
 		       AudioInputStream inputStream = AudioSystem.getAudioInputStream(
-		        		//ActionBrojac.class.getResourceAsStream(url1)
-		        		this.getClass().getClassLoader().getResource(url1)
-		        		//url
+		        	this.getClass().getClassLoader().getResource(url1)
+		        		
 		        		);
 		       
-		       JOptionPane.showMessageDialog(null, inputStream);
 		        System.out.println(inputStream);
 		        clip.open(inputStream);
 		        clip.start(); 
