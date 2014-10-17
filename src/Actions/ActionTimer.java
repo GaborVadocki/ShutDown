@@ -44,7 +44,7 @@ public class ActionTimer implements ActionListener{
 		vremeUSec--;
 		if(vremeUSec<1){
 			Toolkit.getDefaultToolkit().beep();
-			ActionStart.stopT();
+			//ActionStart.stopT();
 			String shutdownCmd = "shutdown -s";
 					try {
 						 Runtime.getRuntime().exec(shutdownCmd);

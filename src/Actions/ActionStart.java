@@ -36,7 +36,8 @@ public class ActionStart implements ActionListener {
 
 		actTimer = new ActionTimer(vremeUSec,mfLocal);
 		
-
+		timer = new Timer(1000, actTimer);
+		timer.start();
 	}
 
 	public static void stopT(){
