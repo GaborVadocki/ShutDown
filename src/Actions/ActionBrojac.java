@@ -78,6 +78,7 @@ public class ActionBrojac extends ActionTimer{
 		}
 	
 	public static void stopZvuk(){
+		if(clip != null)
 		clip.stop();
 	}
 	

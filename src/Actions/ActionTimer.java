@@ -43,7 +43,7 @@ public class ActionTimer implements ActionListener{
 		mfLocal.setLVreme(izlazZaLabel);
 		vremeUSec--;
 		if(vremeUSec<1){
-			Toolkit.getDefaultToolkit().beep();
+			//Toolkit.getDefaultToolkit().beep();
 			//ActionStart.stopT();
 			String shutdownCmd = "shutdown -s";
 					try {
